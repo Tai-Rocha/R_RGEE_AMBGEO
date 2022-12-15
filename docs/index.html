@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Dados geoespaciais na linguagem R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tainá Rocha" />
+    <script src="libs/header-attrs-2.18/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide, left, middle
+background-image: url("images/Rlogo.png")
+background-position: 10% 50%
+background-size: 30%
+background-color: #F9F8F3
+
+.pull-right[
+
+# Dados geoespaciais na linguagem R
+### Janeiro 2023
+]
+
+---
+## Introdução a linguagem R
+.pull-left[
+&lt;img src="images/Rlogo.png" width="72%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+Código aberto
+
+Estatística (ciência de dados) Ross Ihaka &amp; Robert Gentleman
+
+Colocar aqui
+
+Outras coisas
+
+---
+## Introdução a linguagem R
+
+#### IDES para R
+
+&lt;img src="images/Rstudio.png" width="65%" style="display: block; margin: auto;" /&gt;
+---
+## Instalações 
+#### Windows 
+
+1.  Acessar o site oficial [R (4.2.2)](https://www.r-project.org/). 
+
+2. No menu à esquerda, encontre a opção Download e clique em CRAN.
+
+3. Esoclha o servidor (mirror) mais próximo de você.
+
+4. Clique em Download R for Windows.
+
+5. Clique na opção `base`  ou `install R for the first time` 
+
+6. Na nova página, clique em Download R x.x.x for Windows, sendo x.x.x o número da versão que será baixada. Se você teve algum problema com o download, tente escolher outro servidor
+
+- SO Windows: Altamente recomendável a instalação do [Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) 
+
+---
+## Instalações 
+#### Mac
+
+1. Acessar o site oficial [R (4.2.2)](https://www.r-project.org/). 
+
+2. No menu à esquerda, encontre a opção `Download` e clique em CRAN.
+
+3. Escolha a opção de servidor (mirror) mais próxima de você.
+
+4. Na nova página, clique em Download R for (Mac) OS X.
+
+5. Clique na versão do R que você quer baixar (geralmente queremos baixar a mais recente). O objetivo aqui é baixar um arquivo do tipo “R-x.x.x.pkg”, sendo x.x.x o número da versão que vamos instalar. Se você teve algum problema com o download, tente escolher outro servidor no passo 3.
+
+6. Feito o download, clique duas vezes no arquivo baixado e siga as instruções para instalação.
+
+---
+## Instalações
+#### Linux (Ubuntu e Linux Mint)
+
+```
+# r
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+gpg --keyserver keyserver.ubuntu.com --recv-key E298A3A825C0D65DFD57CBB651716619E084DAB9
+gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | sudo apt-key add -
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/"
+sudo apt update
+sudo apt install -y r-base r-base-core r-recommended r-base-dev
+
+# r spatial
+sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+sudo apt update
+sudo apt install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev
+
+# rstudio
+wget -c https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2021.09.0%2B351-amd64.deb &amp;&amp;
+sudo dpkg -i rstudio-2021.09.0+351-amd64.deb &amp;&amp;
+sudo apt install -fy &amp;&amp; 
+rm rstudio-2021.09.0+351-amd64.deb
+
+```
+---
+## Instalações 
+#### RStudio
+
+1. Acesse a página oficial [RStudio (2022.07.2)](https://posit.co/download/rstudio-desktop/)
+
+2. Clique duas vezes no arquivo que você baixou da página do RStudio e siga as instruções de instalação.
+
+---
+## R gui
+
+&lt;img src="images/Rgui.png" width="65%" style="display: block; margin: auto;" /&gt;
+---
+## Interface Rstudio
+
+&lt;center&gt;Rstudio&lt;/center&gt;
+
+&lt;img src="images/Rstudioabas.png" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;center&gt;Fonte Luis Otávio&lt;/center&gt;
+
+---
+## Dados geoespaciais no R
+#### Dados vetoriais
+
+Formas geométricas (ex. pontos, linhas e polígonos) que geralmente possuem tabelas de atributos assoiacos a essas formas. 
+.pull-left[
+&lt;img src="images/vetor.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+.pull-right[
+Figura disponível em [livro](https://analises-ecologicas.com/index.html) 
+
+]
+---
+## Instalando e carregando pacotes 
+
+Instalação. Necessário apenas  UMA vez 
+
+
+```r
+install.packages("rgee") 
+```
+
+Carregando os pacotes. Necessário sempre ao iniciar um sessão R / Rstudio
+
+
+```r
+library(rgee)
+```
+
+---
+## Dados geoespaciais no R
+#### Principais pacotes R para manipulação de dado vetoriais 
+
+&lt;img src="images/vector_pcks.png" width="55%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n",
+"highlightStyle": "solarized-light",
+"highlightLanguage": ["r", "css", "yaml"],
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
