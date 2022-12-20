@@ -3,7 +3,7 @@
   <head>
     <title>Dados geoespaciais na linguagem R</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Tainá Rocha" />
+    <meta name="author" content="Dra. Tainá Rocha" />
     <script src="libs/header-attrs-2.18/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -23,6 +23,7 @@ background-color: #F9F8F3
 
 # Dados geoespaciais na linguagem R
 ### Janeiro 2023
+### Dra. Tainá Rocha
 ]
 
 ---
@@ -31,18 +32,19 @@ background-color: #F9F8F3
 &lt;img src="images/Rlogo.png" width="72%" style="display: block; margin: auto auto auto 0;" /&gt;
 ]
 
-Código aberto
+&lt;br&gt;
+&lt;br&gt;
 
-Estatística (ciência de dados) Ross Ihaka &amp; Robert Gentleman
+### Código aberto
 
-Colocar aqui
+### Estatística | Ciência de dados 
 
-Outras coisas
+### Comunidade colaborativa e ativa  
 
 ---
 ## Introdução a linguagem R
 
-#### IDES para R
+### IDES para R
 
 &lt;img src="images/Rstudio.png" width="65%" style="display: block; margin: auto;" /&gt;
 ---
@@ -51,7 +53,7 @@ Outras coisas
 
 1.  Acessar o site oficial [R (4.2.2)](https://www.r-project.org/). 
 
-2. No menu à esquerda, encontre a opção Download e clique em CRAN.
+2. Acessar a opção `Download`.
 
 3. Esoclha o servidor (mirror) mais próximo de você.
 
@@ -69,7 +71,7 @@ Outras coisas
 
 1. Acessar o site oficial [R (4.2.2)](https://www.r-project.org/). 
 
-2. No menu à esquerda, encontre a opção `Download` e clique em CRAN.
+2.  Acessar a opção `Download` .
 
 3. Escolha a opção de servidor (mirror) mais próxima de você.
 
@@ -108,12 +110,12 @@ rm rstudio-2021.09.0+351-amd64.deb
 ## Instalações 
 #### RStudio
 
-1. Acesse a página oficial [RStudio (2022.07.2)](https://posit.co/download/rstudio-desktop/)
+1. Acesse a página oficial [RStudio (2022.12.0)](https://posit.co/download/rstudio-desktop/)
 
 2. Clique duas vezes no arquivo que você baixou da página do RStudio e siga as instruções de instalação.
 
 ---
-## R gui
+## R Gui
 
 &lt;img src="images/Rgui.png" width="65%" style="display: block; margin: auto;" /&gt;
 ---
@@ -123,6 +125,43 @@ rm rstudio-2021.09.0+351-amd64.deb
 
 &lt;img src="images/Rstudioabas.png" width="75%" style="display: block; margin: auto;" /&gt;
 &lt;center&gt;Fonte Luis Otávio&lt;/center&gt;
+---
+## Instalando pacotes das práticas. O comando é necessário apenas 1x
+
+```r
+install.packages("dplyr") # manipulação dos dados do tipo  dataframe
+install.packages("geojsonio") # Converter dados para 'GeoJSON'
+install.packages("ggplot2") # gráficos
+install.packages("rgee") # acessar GEE
+install.packages("raster")  # manipulação de dados vetoriais e matriciais
+install.packages("sf") # manipulação de dados vetoriais
+install.packages("tidyr") # manipulação dos dados do tipo  dataframe
+```
+---
+## Carregando os pacotes. Necessário sempre ao iniciar a sessão R/ Rstudio
+
+
+```r
+library(dplyr) 
+library(geojsonio) 
+library(ggplot2) 
+library(rgee) 
+library(raster) 
+library(sf)  
+library(tidyr) 
+```
+
+&lt;center&gt; Fim do primeiro ato ! &lt;/center&gt;
+---
+## Dados geoespaciais na linguagem R
+.pull-left[
+&lt;img src="images/Rlogo.png" width="72%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+&lt;br&gt;
+&lt;br&gt;
+
+### Código aberto
 
 ---
 ## Dados geoespaciais no R
@@ -136,28 +175,28 @@ Formas geométricas (ex. pontos, linhas e polígonos) que geralmente possuem tab
 Figura disponível em [livro](https://analises-ecologicas.com/index.html) 
 
 ]
----
-## Instalando e carregando pacotes 
-
-Instalação. Necessário apenas  UMA vez 
-
-
-```r
-install.packages("rgee") 
-```
-
-Carregando os pacotes. Necessário sempre ao iniciar um sessão R / Rstudio
-
-
-```r
-library(rgee)
-```
 
 ---
 ## Dados geoespaciais no R
-#### Principais pacotes R para manipulação de dado vetoriais 
+#### Principais pacotes R que usaremos para manipulação de dados vetoriais e matricais
 
 &lt;img src="images/vector_pcks.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+## Dados geoespaciais no R
+#### Principais pacotes R que usaremos para manipulação de dados vetoriais e matricais
+.pull-left[
+&lt;img style="border-radius: 10%;" src="https://user-images.githubusercontent.com/16768318/118376965-5f7dca80-b5cb-11eb-9a82-47876680a3e6.png" width="380px"/&gt;
+]
+.pull-right[
+&lt;br&gt;
+&lt;br&gt;
+### Acesso ao Google Earth Engine via R
+]
+---
+## Mãos À obra 
+
+&lt;img src="https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=ecf05e47307gd7nm3judswslotpf1tmp6o7ybmvp694f8z01&amp;rid=giphy.gif&amp;ct=g" width="40%" style="display: block; margin: auto;" /&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

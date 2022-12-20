@@ -1,6 +1,6 @@
 ---
 title: "Dados geoespaciais na linguagem R"
-author: "Tainá Rocha"
+author: "Dra. Tainá Rocha"
 role: Environmental and Biodiversity Data Scientist <br> Biologist | MSc. in Environmental biology | PhD. in Zoology 
 org: "  "
 date: "Janeiro 2023"
@@ -33,6 +33,7 @@ background-color: #F9F8F3
 
 # `r rmarkdown::metadata$title`
 ### `r rmarkdown::metadata$date`
+### `r rmarkdown::metadata$author`
 ]
 
 ---
@@ -43,18 +44,19 @@ knitr::include_graphics("images/Rlogo.png")
 ```
 ]
 
-Código aberto
+<br>
+<br>
 
-Estatística (ciência de dados) Ross Ihaka & Robert Gentleman
+### Código aberto
 
-Colocar aqui
+### Estatística | Ciência de dados 
 
-Outras coisas
+### Comunidade colaborativa e ativa  
 
 ---
 ## Introdução a linguagem R
 
-#### IDES para R
+### IDES para R
 
 ```{r Rstudio, echo=FALSE, out.width="65%", fig.align="center"}
 knitr::include_graphics("images/Rstudio.png")
@@ -65,7 +67,7 @@ knitr::include_graphics("images/Rstudio.png")
 
 1.  Acessar o site oficial [R (4.2.2)](https://www.r-project.org/). 
 
-2. No menu à esquerda, encontre a opção Download e clique em CRAN.
+2. Acessar a opção `Download`.
 
 3. Esoclha o servidor (mirror) mais próximo de você.
 
@@ -83,7 +85,7 @@ knitr::include_graphics("images/Rstudio.png")
 
 1. Acessar o site oficial [R (4.2.2)](https://www.r-project.org/). 
 
-2. No menu à esquerda, encontre a opção `Download` e clique em CRAN.
+2.  Acessar a opção `Download` .
 
 3. Escolha a opção de servidor (mirror) mais próxima de você.
 
@@ -122,12 +124,12 @@ rm rstudio-2021.09.0+351-amd64.deb
 ## Instalações 
 #### RStudio
 
-1. Acesse a página oficial [RStudio (2022.07.2)](https://posit.co/download/rstudio-desktop/)
+1. Acesse a página oficial [RStudio (2022.12.0)](https://posit.co/download/rstudio-desktop/)
 
 2. Clique duas vezes no arquivo que você baixou da página do RStudio e siga as instruções de instalação.
 
 ---
-## R gui
+## R Gui
 
 ```{r Rgui, echo=FALSE, out.width="65%", fig.align="center"}
 knitr::include_graphics("images/Rgui.png")
@@ -141,6 +143,46 @@ knitr::include_graphics("images/Rgui.png")
 knitr::include_graphics("images/Rstudioabas.png")
 ```
 <center>Fonte Luis Otávio</center>
+---
+## Instalando pacotes das práticas. O comando é necessário apenas 1x
+```{r pckgs, echo=TRUE, eval=FALSE}
+
+install.packages("dplyr") # manipulação dos dados do tipo  dataframe
+install.packages("geojsonio") # Converter dados para 'GeoJSON'
+install.packages("ggplot2") # gráficos
+install.packages("rgee") # acessar GEE
+install.packages("raster")  # manipulação de dados vetoriais e matriciais
+install.packages("sf") # manipulação de dados vetoriais
+install.packages("tidyr") # manipulação dos dados do tipo  dataframe
+```
+---
+## Carregando os pacotes. Necessário sempre ao iniciar a sessão R/ Rstudio
+
+```{r loadpckgs, echo=TRUE, eval=FALSE}
+
+library(dplyr) 
+library(geojsonio) 
+library(ggplot2) 
+library(rgee) 
+library(raster) 
+library(sf)  
+library(tidyr) 
+
+```
+
+<center> Fim do primeiro ato ! </center>
+---
+## Dados geoespaciais na linguagem R
+.pull-left[
+```{r RSpatial, echo=FALSE, out.width="72%", fig.align="left"}
+knitr::include_graphics("images/Rlogo.png")
+```
+]
+
+<br>
+<br>
+
+### Código aberto
 
 ---
 ## Dados geoespaciais no R
@@ -156,25 +198,29 @@ knitr::include_graphics("images/vetor.png")
 Figura disponível em [livro](https://analises-ecologicas.com/index.html) 
 
 ]
+
 ---
-## Instalando e carregando pacotes 
+## Dados geoespaciais no R
+#### Principais pacotes R que usaremos para manipulação de dados vetoriais e matricais
 
-Instalação. Necessário apenas  UMA vez 
-
-```{r instal, echo=TRUE, eval=FALSE}
-install.packages("rgee") 
-```
-
-Carregando os pacotes. Necessário sempre ao iniciar um sessão R / Rstudio
-
-```{r libray, echo=TRUE, eval=FALSE}
-library(rgee)
+```{r vetor_pckgs, echo=FALSE, out.width="55%", fig.align="center"}
+knitr::include_graphics("images/vector_pcks.png")
 ```
 
 ---
 ## Dados geoespaciais no R
-#### Principais pacotes R para manipulação de dado vetoriais 
+#### Principais pacotes R que usaremos para manipulação de dados vetoriais e matricais
+.pull-left[
+<img style="border-radius: 10%;" src="https://user-images.githubusercontent.com/16768318/118376965-5f7dca80-b5cb-11eb-9a82-47876680a3e6.png" width="380px"/>
+]
+.pull-right[
+<br>
+<br>
+### Acesso ao Google Earth Engine via R
+]
+---
+## Mãos À obra 
 
-```{r vetor_pckgs, echo=FALSE, out.width="55%", fig.align="center"}
-knitr::include_graphics("images/vector_pcks.png")
+```{r cat, echo=FALSE, out.width="40%", fig.align="center"}
+knitr::include_graphics("https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=ecf05e47307gd7nm3judswslotpf1tmp6o7ybmvp694f8z01&rid=giphy.gif&ct=g")
 ```
