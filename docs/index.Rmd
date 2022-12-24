@@ -170,19 +170,82 @@ library(tidyr)
 
 ```
 
-<center> Fim do primeiro ato ! </center>
+---
+## Funcionalidade "Projetos" no Rstudio.
+--
+
+#### Menu File -> New Project
+
+```{r Rprojects1, echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics("images/Rprojects_1.png")
+```
+
+---
+## Funcionalidade "Projetos" no Rstudio.
+
+#### Canto superior direito -> New Project
+
+```{r Rprojects2, echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics("images/Rprojects_2.png")
+```
+
+---
+## Funcionalidade "Projetos" no Rstudio.
+
+#### Selecionar diretório na sua máquina 
+
+```{r Rprojects3, echo=FALSE, out.width="55%", fig.align="center"}
+knitr::include_graphics("images/Rprojects_3.png")
+```
+---
+## Funcionalidade "Projetos" no Rstudio.
+
+#### Organização dos diretórios 
+.pull-left[
+Exemplo 1: 
+
+nome_do_projeto/
+  - README.Rmd: Arquivo de texto descrevendo o projeto 
+  - R/: Código/scripts R, script_1_installpckgs, script_2loadpckgs
+  - data-raw/: Dados brutos 
+  - data/: Dados limpos/filtrados/recortados
+  - docs/: documentos gerais
+  - output/: resultados
+  - nome_do_projeto.Rproj
+]
+<br>
+Exemplo 2:
+
+nome_do_projeto/
+  - .Rprofile: códigos para rodar assim que abrir o projeto
+  - R/: Código R, organizado com a-carrega.R, b-prepara bd.R, c-vis.R, d-modela, ...
+  - csv/: Dados em .csv
+  - png/: gráficos em PNG
+  - nome_do_projeto.Rproj
+
 ---
 ## Dados geoespaciais na linguagem R
 .pull-left[
-```{r RSpatial, echo=FALSE, out.width="72%", fig.align="left"}
+```{r RSpatial, echo=FALSE, out.width="70%", fig.align="center"}
 knitr::include_graphics("images/Rlogo.png")
 ```
 ]
 
 <br>
-<br>
 
-### Código aberto
+.right-col[
+
+<img style="border-radius: 10%; object-fit: cover;" src="https://pbs.twimg.com/media/EgqKANjVkAEVDtb.jpg" width="270px" height="270px"/>
+
+<center> Tipos de dados</center> 
+<br>
+<center>  Principais pacotes</center>
+<br>
+<center> Operações diversas</center>
+<br>
+<center> Estudos de casos</center>
+
+]
 
 ---
 ## Dados geoespaciais no R
@@ -195,16 +258,39 @@ knitr::include_graphics("images/vetor.png")
 ```
 ]
 .pull-right[
-Figura disponível em [livro](https://analises-ecologicas.com/index.html) 
+<br>
+<br>
+<br>
+<br>
+Figura disponível no livro [Análises Ecológicas no R](https://analises-ecologicas.com/index.html) 
+
+]
+---
+## Dados geoespaciais no R
+#### Dados matriciais. Conjunto de celulas/pixels (matriz) que apresentam : 
+.pull-left[
+```{r rasterM, echo=FALSE, out.width="40%", fig.align="left"}
+knitr::include_graphics("images/rasterM.png")
+```
 
 ]
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Figura disponível no livro [Análises Ecológicas no R](https://analises-ecologicas.com/index.html) 
+
 ---
 ## Dados geoespaciais no R
-#### Principais pacotes R que usaremos para manipulação de dados vetoriais e matricais
+#### Principais pacotes para manipulação de dado geoespacial no R
 
 ```{r vetor_pckgs, echo=FALSE, out.width="55%", fig.align="center"}
-knitr::include_graphics("images/vector_pcks.png")
+knitr::include_graphics("images/Rspatial.png")
 ```
 
 ---
@@ -224,3 +310,77 @@ knitr::include_graphics("images/vector_pcks.png")
 ```{r cat, echo=FALSE, out.width="40%", fig.align="center"}
 knitr::include_graphics("https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=ecf05e47307gd7nm3judswslotpf1tmp6o7ybmvp694f8z01&rid=giphy.gif&ct=g")
 ```
+
+
+---
+#### GEE e RGEE
+
+```{r url 1, echo=FALSE}
+knitr::include_url("https://earthengine.google.com/", height = 450)
+```
+.footnote[https://developers.google.com/earth-engine/datasets/"]
+
+---
+### Infraestrutura do GEE - JavaScript ou Phyton 
+
+--
+```{r js_py, echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics("images/js_py.png")
+```
+---
+### Infraestrutura do GEE
+
+Code editor : https://code.earthengine.google.com/
+```{r cejs, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics("images/cejs.png")
+```
+
+---
+class: middle 
+background-image: url(images/rgee-hex.png)
+background-position: 50% 5%
+background-size: 5%
+
+
+```{r paper, echo=FALSE}
+knitr::include_url("https://www.theoj.org/joss-papers/joss.02272/10.21105.joss.02272.pdf", height = 450)
+
+```
+---
+#### Funcionamento do rgee
+```{r workflow, echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics("images/wf_rgee.png")
+```
+
+---
+#### Referências
+
+- Aybar, C., Wu, Q., Bautista, L., Yali, R., & Barja, A. (2020). rgee: An R package for interacting with Google Earth Engine. Journal of Open Source Software, 5(51), 2272.
+
+- [Documentação](https://cran.r-project.org/web/packages/rgee/vignettes/rgee01.html)
+
+- [Tutorial](http://www.css.cornell.edu/faculty/dgr2/_static/files/R_html/ex_rgee.html)
+
+- [Repositório](https://github.com/r-spatial/rgee)
+
+- [rgeeExtra](https://r-earthengine.com/rgeeExtra/), extensão para o rgee 
+
+- [rgee examples](https://csaybar.github.io/rgee-examples/)
+
+
+---
+name: hello
+class: middle, center, inverse
+
+
+### `r rmarkdown::metadata$author`
+
+<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/11633554?v=4" width="150px"/>
+
+### `r rmarkdown::metadata$role`
+
+### `r rmarkdown::metadata$org`
+
+[`r fontawesome::fa("github")` @Tai-Rocha](https://github.com/Tai-Rocha)    
+[`r fontawesome::fa("twitter")` @Tai_Rocha_](https://twitter.com/Tai_Rocha_)   
+[`r fontawesome::fa("link")` tainaweb-en.netlify.app](https://tainaweb-en.netlify.app/)
