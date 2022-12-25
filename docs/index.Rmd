@@ -312,7 +312,7 @@ knitr::include_graphics("images/Rspatial.png")
 
 ---
 ## Dados geoespaciais no R
-#### Principais pacotes R que usaremos para manipulação de dados vetoriais e matricais
+#### Principais pacotes para manipulação de dado geoespacial no R
 .pull-left[
 <img style="border-radius: 10%;" src="https://user-images.githubusercontent.com/16768318/118376965-5f7dca80-b5cb-11eb-9a82-47876680a3e6.png" width="380px"/>
 ]
@@ -322,15 +322,17 @@ knitr::include_graphics("images/Rspatial.png")
 ### Acesso ao Google Earth Engine via R
 ]
 ---
-## Mãos À obra 
+## Mãos à obra 
 
 ```{r cat, echo=FALSE, out.width="40%", fig.align="center"}
 knitr::include_graphics("https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=ecf05e47307gd7nm3judswslotpf1tmp6o7ybmvp694f8z01&rid=giphy.gif&ct=g")
 ```
 
-
+Parte prática: Script_1_install.R , Scripts_2_vetores.R, Scripts_3_matriz.R
 ---
-#### GEE e RGEE
+## Dados geoespaciais no R
+
+#### rgee: acessando a API do GEE 
 
 ```{r url 1, echo=FALSE}
 knitr::include_url("https://earthengine.google.com/", height = 450)
@@ -364,11 +366,23 @@ knitr::include_url("https://www.theoj.org/joss-papers/joss.02272/10.21105.joss.0
 
 ```
 ---
+### Infraestrutura do GEE - JavaScript ou Phyton 
+```{r js_py_r, echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics("images/R_option.png")
+```
+---
 #### Funcionamento do rgee
 ```{r workflow, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("images/wf_rgee.png")
 ```
+---
+## Mãos à obra 
 
+```{r cat_2, echo=FALSE, out.width="40%", fig.align="center"}
+knitr::include_graphics("https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=ecf05e47307gd7nm3judswslotpf1tmp6o7ybmvp694f8z01&rid=giphy.gif&ct=g")
+```
+
+Parte prática: Script_4_rgee.R, Scrip_5_Estudos_de_caso.R
 ---
 #### Referências
 
