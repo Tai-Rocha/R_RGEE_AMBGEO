@@ -44,7 +44,7 @@ background-color: #F9F8F3
 ---
 ## Introdução a linguagem R
 
-### IDES para R
+### IDE para R
 
 &lt;img src="images/Rstudio.png" width="65%" style="display: block; margin: auto;" /&gt;
 ---
@@ -126,7 +126,7 @@ rm rstudio-2021.09.0+351-amd64.deb
 &lt;img src="images/Rstudioabas.png" width="75%" style="display: block; margin: auto;" /&gt;
 &lt;center&gt;Fonte Luis Otávio&lt;/center&gt;
 ---
-## Instalando pacotes das práticas. O comando é necessário apenas 1x
+## Instalando pacotes das práticas. O comando é necessário apenas uma vez
 
 ```r
 install.packages("dplyr") # manipulação dos dados do tipo  dataframe
@@ -224,7 +224,7 @@ nome_do_projeto/
 ## Dados geoespaciais no R
 #### Dados vetoriais
 
-Formas geométricas (ex. pontos, linhas e polígonos) que geralmente possuem tabelas de atributos assoiacos a essas formas. 
+Formas geométricas (ex. pontos, linhas e polígonos) que geralmente possuem tabelas de atributos associados a essas formas. 
 .pull-left[
 &lt;img src="images/vetor.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
 ]
@@ -238,7 +238,7 @@ Figura disponível no livro [Análises Ecológicas no R](https://analises-ecolog
 ]
 ---
 ## Dados geoespaciais no R
-#### Dados matriciais. Conjunto de celulas/pixels (matriz) que apresentam : 
+#### Dados matriciais. Conjunto de células/pixels (matriz) que apresentam : 
 .pull-left[
 &lt;img src="images/rasterM.png" width="40%" style="display: block; margin: auto auto auto 0;" /&gt;
 
@@ -293,7 +293,7 @@ Parte prática: Script_1_install.R , Scripts_2_vetores.R, Scripts_3_matriz.R
 ---
 ## Dados geoespaciais no R
 
-#### rgee: acessando a API do GEE 
+#### rgee: acessando a API do GEE pelo R
 
 &lt;iframe src="https://earthengine.google.com/" width="100%" height="450" data-external="1"&gt;&lt;/iframe&gt;
 .footnote[https://developers.google.com/earth-engine/datasets/"]
@@ -321,28 +321,111 @@ background-size: 5%
 ### Infraestrutura do GEE - JavaScript ou Phyton 
 &lt;img src="images/R_option.png" width="70%" style="display: block; margin: auto;" /&gt;
 ---
-#### Funcionamento do rgee
+### Funcionamento do rgee
 &lt;img src="images/wf_rgee.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+### Requisitos pré instalação do rgee 
+
+### [Conta google](https://www.google.com/intl/pt-BR/account/about/) com o [Earth Engine](https://earthengine.google.com/) ativado
+
+### [Python](https://www.python.org/downloads/) &gt;= v3.5
+
+---
+### Instalação rgee
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+```r
+install.packages("rgee")
+```
+---
+### Instalação rgee
+
+Requisitos pós instalação rgee. Geralmente necessário uma única vez
+
+
+```r
+rgee::ee_install()
+```
+
+- Instalar o Miniconda (um instalador simplificado e gratuito para conda) para gerenciamento de ambientes virtuais 
+
+- Remover ambientes py anteriores caso existam, para criar o novo ambiente virtual (venv)
+
+- Configura o EARTHENGINE_PYTHON e EARTHENGINE_ENV que serão usadas para definição do RETICULATE_PYTHON quando o rgee for carregado.
+
+- Instala as dependências do rgee Python: Earth Engine Python API (ee) e numpy (manipulação de dados do tipo array, ex.:matrizes multi-dimensioais)
+
+- Reinicia a sessão do R para fixar essas configurações
+
+---
+### Requisitos pós instalação rgee
+
+Caso o `ee_install()` não funcione por algum motivo. Outra alternativa :
+
+
+```r
+unix_py_path = paste0(
+  "/home/tai-rocha/venv",
+  "rgee/bin/python3"
+)
+#
+ee_install_set_pyenv(
+  py_path = unix_py_path,
+  py_env = "rgee"
+)
+```
+
+---
+### Requisitos pós instalação rgee
+Algumas vezes, pode ser necessário remover o ambiente py existente 
+
+
+```r
+ee_clean_pyenv()
+```
+
+E fazer uma nova instalação deste ambiente 
+
+
+```r
+rgee::ee_install()
+```
+
 ---
 ## Mãos à obra 
 
 &lt;img src="https://media1.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif?cid=ecf05e47307gd7nm3judswslotpf1tmp6o7ybmvp694f8z01&amp;rid=giphy.gif&amp;ct=g" width="40%" style="display: block; margin: auto;" /&gt;
 
 Parte prática: Script_4_rgee.R, Scrip_5_Estudos_de_caso.R
+
 ---
 #### Referências
 
+- [Geocomputation with R](https://geocompr.robinlovelace.net/)
+
+- [Análises Ecológicas no R](https://analises-ecologicas.netlify.app/index.html)
+
+- [Ciência de Dados em R](https://livro.curso-r.com/index.html)
+
+- [Análise Espacial com R](https://www.dropbox.com/s/blgtp2bmpdghol7/AnaliseEspacialComR.pdf?dl=0)
+
+---
+#### Referências
+
+- [Documentação GEE](https://developers.google.com/earth-engine) 
+
 - Aybar, C., Wu, Q., Bautista, L., Yali, R., &amp; Barja, A. (2020). rgee: An R package for interacting with Google Earth Engine. Journal of Open Source Software, 5(51), 2272.
 
-- [Documentação](https://cran.r-project.org/web/packages/rgee/vignettes/rgee01.html)
+- [Introdução ao rgee](https://cran.r-project.org/web/packages/rgee/vignettes/rgee01.html)
 
-- [Tutorial](http://www.css.cornell.edu/faculty/dgr2/_static/files/R_html/ex_rgee.html)
-
-- [Repositório](https://github.com/r-spatial/rgee)
+- [Repositório rgee](https://github.com/r-spatial/rgee)
 
 - [rgeeExtra](https://r-earthengine.com/rgeeExtra/), extensão para o rgee 
 
-- [rgee examples](https://csaybar.github.io/rgee-examples/)
+
 
 
 ---
