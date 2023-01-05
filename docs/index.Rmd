@@ -466,13 +466,15 @@ Parte prática: Script_4_rgee.R, Scrip_5_Estudos_de_caso.R
 
 - [Documentação GEE](https://developers.google.com/earth-engine) 
 
-- Aybar, C., Wu, Q., Bautista, L., Yali, R., & Barja, A. (2020). rgee: An R package for interacting with Google Earth Engine. Journal of Open Source Software, 5(51), 2272.
+- Aybar, C., Wu, Q., Bautista, L., Yali, R., & Barja, A. (2020). rgee: An R package for interacting with Google Earth Engine. Journal of Open Source Software, 5(51), 2272
 
 - [Introdução ao rgee](https://cran.r-project.org/web/packages/rgee/vignettes/rgee01.html)
 
 - [Repositório rgee](https://github.com/r-spatial/rgee)
 
 - [rgeeExtra](https://r-earthengine.com/rgeeExtra/), extensão para o rgee 
+
+- Pacote [reprex](https://reprex.tidyverse.org/): criando exemplos reprodutíveis para pedir ajuda
 
 ---
 name: hello
