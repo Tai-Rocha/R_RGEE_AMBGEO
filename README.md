@@ -1,4 +1,4 @@
-#### Ementa do curso Dados geoespaciais na linguagem R
+# Ementa do curso Dados geoespaciais na linguagem R
 
 ### Resumo
 O curso oferecerá os principais conceitos teóricos e práticos  para manipulação e visualização de dados geoespaciais usando linguagem R. Serão abordados os seguintes temas:
