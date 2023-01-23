@@ -26,7 +26,7 @@ O curso oferecerá os principais conceitos teóricos e práticos  para manipula�
 3.2 Entendendo a sintaxe o rgee* (mostrar o que se pode fazer, o que se tem disponível de operação para cada classe de objetos)
 3.3 Operações básicas 
 
-Estudos de casos usando o rgee (1h e 30 min)
+4. Estudos de casos usando o rgee (1h e 30 min)
 4.1 Análise exploratória de dados ambientais
 4.2 Estatísticas básicas para áreas de interesse 
 4.3 [MapBiomas](https://mapbiomas.org/) no Rgee
