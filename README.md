@@ -1,13 +1,4 @@
-# Dados geoespaciais na linguagem R
-
-#### Ementa do curso
-
-# Dados geoespaciais na linguagem R
-
-[Slides](https://tai-rocha.github.io/R_RGEE_AMBGEO.github.io/) do curso de Dados geoespaciais na linguagem R.
-
-[Repositório](https://github.com/Tai-Rocha/R_RGEE_AMBGEO.github.io)
-
+#### Ementa do curso Dados geoespaciais na linguagem R
 
 ### Resumo
 O curso oferecerá os principais conceitos teóricos e práticos  para manipulação e visualização de dados geoespaciais usando linguagem R. Serão abordados os seguintes temas:
@@ -38,7 +29,7 @@ O curso oferecerá os principais conceitos teóricos e práticos  para manipula�
 Estudos de casos usando o rgee (1h e 30 min)
 4.1 Análise exploratória de dados ambientais
 4.2 Estatísticas básicas para áreas de interesse 
-4.3 MapBiomas no Rgee
+4.3 [MapBiomas](https://mapbiomas.org/) no Rgee
 4.5 Dados geoespaciais de ocorrência de espécies
 
 
