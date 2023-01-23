@@ -42,7 +42,7 @@ O curso oferecerá os principais conceitos teóricos e práticos  para manipula�
 
 Todas as aulas serão gravadas usando scripts R no Rstudio e alguns sites. 
 
-Divisão deos vídeos:
+Divisão dos vídeos:
 
 00:00 - 33:56 (Video_1, Script_1_install.R)- Introdução a linguagem R , IDE Rstudio (interface) e instalações
 
