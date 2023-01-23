@@ -4,39 +4,39 @@
 O curso oferecerá os principais conceitos teóricos e práticos  para manipulação e visualização de dados geoespaciais usando linguagem R. Serão abordados os seguintes temas:
 
 ### Conteúdo
-1. Introdução a linguagem R 
-1.1 Porquê o R ? Breve hitórico, vantagens e desvantagens 
-1.2 Instalação do R e  Rstudio IDE
-1.2.1 Windows
-1.2.2 Linux
-1.2.3 Mac
-1.3 Rstudio 
-1.3.1 Entendo a interface 
-1.3.2 Instalação dos pacotes R 
-1.4  A importância de se trabalhar com a estrututa de “Projetos” 
+1. Introdução a linguagem R <br/>
+1.1 Porquê o R ? Breve hitórico, vantagens e desvantagens <br/>
+1.2 Instalação do R e  Rstudio IDE<br/>
+1.2.1 Windows<br/>
+1.2.2 Linux<br/>
+1.2.3 Mac<br/>
+1.3 Rstudio <br/>
+1.3.1 Entendo a interface <br/>
+1.3.2 Instalação dos pacotes R <br/>
+1.4  A importância de se trabalhar com a estrututa de “Projetos”<br/> 
 
-2. Dados geoespaciais no R 
-2.1 Dados vetoriais e dados matriciais. raster, sf/sp e rgdal : principais pacotes R do ecossistema geoespacial.  Importando e exportando dados os geoespaciais.
-2.2 Operações básicas (joins, buffer, extração de valores, média, somas etc.)
-2.3 Pacotes para vizualização de dados: tmap e ggplot
-2.2 Pacotes R para download de dados geoespaciais
+2. Dados geoespaciais no R <br/>
+2.1 Dados vetoriais e dados matriciais. raster, sf/sp e rgdal : principais pacotes R do ecossistema geoespacial.  Importando e exportando dados os geoespaciais.<br/>
+2.2 Operações básicas (joins, buffer, extração de valores, média, somas etc.)<br/>
+2.3 Pacotes para vizualização de dados: tmap e ggplot<br/>
+2.2 Pacotes R para download de dados geoespaciais<br/>
 
-3. Rgee: um pacote R para acessar o GEE 
-3.1 Pre requisitos e instalção
-3.2 Entendendo a sintaxe o rgee* (mostrar o que se pode fazer, o que se tem disponível de operação para cada classe de objetos)
-3.3 Operações básicas 
+3. Rgee: um pacote R para acessar o GEE <br/>
+3.1 Pre requisitos e instalção<br/>
+3.2 Entendendo a sintaxe o rgee* (mostrar o que se pode fazer, o que se tem disponível de operação para cada classe de objetos)<br/>
+3.3 Operações básicas <br/>
 
-4. Estudos de casos usando o rgee (1h e 30 min)
-4.1 Análise exploratória de dados ambientais
-4.2 Estatísticas básicas para áreas de interesse 
-4.3 [MapBiomas](https://mapbiomas.org/) no Rgee
-4.5 Dados geoespaciais de ocorrência de espécies
+4. Estudos de casos usando o rgee (1h e 30 min)<br/>
+4.1 Análise exploratória de dados ambientais<br/>
+4.2 Estatísticas básicas para áreas de interesse <br/>
+4.3 [MapBiomas](https://mapbiomas.org/) no Rgee<br/>
+4.5 Dados geoespaciais de ocorrência de espécies<br/>
 
 
-5. Off topic, porém, não menos importante:  Onde e como buscar ajuda?
-5.1 Google 
-5.2 Github 
-5.3 Stackoverflow
+5. Off topic, porém, não menos importante:  Onde e como buscar ajuda?<br/>
+5.1 Google <br/>
+5.2 Github <br/>
+5.3 Stackoverflow<br/>
 
 ### Metodologia
 
